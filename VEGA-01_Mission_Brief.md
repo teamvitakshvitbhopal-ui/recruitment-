@@ -1,4 +1,4 @@
-# VEGA-01 — Mission Brief
+# VEGA-01 - Mission Brief
 
 VEGA-01 is a high-altitude balloon payload carrying scientific instruments and a small avionics stack.
 
@@ -10,46 +10,46 @@ For this recruitment challenge, the real system is simplified so that you can fo
 
 ```text
                        2S LiPo
-                          │
-                    ┌─────▼─────┐
-                    │ Power     │
-                    │ Regulation│
-                    └─────┬─────┘
-                          │ 3.3 V
-                    ┌─────▼─────┐
-                    │ Flight MCU│
-                    └──┬──┬──┬──┘
-                       │  │  │
-                 I²C ──┘  │  └── UART ── GNSS
-                       │
-                   SPI │
-                       ▼
-                      IMU
+                          |
+                    +-----+-----+
+                    |   Power   |
+                    | Regulation|
+                    +-----+-----+
+                          | 3.3 V
+                    +-----+-----+
+                    | Flight MCU|
+                    +--+--+--+--+
+                       |  |  |
+                 I2C --+  |  +-- UART -- GNSS
+                       |  |
+                   SPI |  |
+                       |  |
+                       +--+--> IMU
 
-                    MCU ─────── Radio
-                     │
-                     └───────── ADC ── Battery Monitor
+                    MCU ------- Radio
+                     |
+                     +--------- ADC -- Battery Monitor
 ```
 
 ## Available devices
 
 | Device | Interface | Simplified notes |
 |---|---|---|
-| Flight MCU | — | 3.3 V logic |
-| Pressure sensor | I²C | 3.3 V |
+| Flight MCU | - | 3.3 V logic |
+| Pressure sensor | I2C | 3.3 V |
 | IMU | SPI | 3.3 V |
 | GNSS receiver | UART | 3.3 V logic assumed |
 | Radio | UART/SPI | RF section out of scope |
-| Battery monitor | ADC | MCU ADC range 0–3.3 V |
-| Main battery | — | 2S LiPo, 7.4 V nominal, 8.4 V full |
+| Battery monitor | ADC | MCU ADC range 0-3.3 V |
+| Main battery | - | 2S LiPo, 7.4 V nominal, 8.4 V full |
 
 ## Recruitment missions
 
-The challenge is split into two small missions.
+The avionics challenge is split into two small missions.
 
-### Mission 01 — Wake the Ground Station
+### Mission 01 - Wake the Ground Station
 
-Work with the supplied telemetry data and starter material for **YAMCS** and **Open MCT**.
+Work with the supplied telemetry data and starter material for YAMCS and Open MCT.
 
 The goal is to turn raw flight data into a ground-station view that an operator can actually use.
 
@@ -61,9 +61,9 @@ You will work with:
 - plots and status information
 - basic fault investigation
 
-### Mission 02 — Bring a Sensor to Life
+### Mission 02 - Bring a Sensor to Life
 
-Work with a **BMP280 pressure and temperature sensor** and a suitable microcontroller.
+Work with a BMP280 pressure and temperature sensor and a suitable microcontroller.
 
 The goal is to figure out how the sensor should be connected, how the controller communicates with it, and how to check that the measurements make sense.
 
@@ -71,7 +71,7 @@ You will work with:
 
 - datasheets
 - power and wiring
-- I²C
+- I2C
 - basic embedded code
 - hardware troubleshooting
 
@@ -89,7 +89,7 @@ This is a recruitment challenge, so the final result is only part of what we car
 
 We want to see how you approach something you do not already know:
 
-**learn → build → test → break → debug → explain**
+**learn -> build -> test -> break -> debug -> explain**
 
 Using documentation, search, compilers, CAD tools, and AI is allowed.
 
